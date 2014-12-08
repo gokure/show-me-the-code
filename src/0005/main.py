@@ -19,7 +19,7 @@ def image_resize(filename):
             new_height = int(raw_height*ratio)
             img.resize((new_width, new_height), Image.ANTIALIAS).save(filename, quality=95)
     except IOError:
-        print "{0} cannot open, maybe it's not picture.".format(filename)
+        print "The file {0} is not picture.".format(path.basename(filename))
 
 if __name__ == '__main__':
     for filename in glob(path.abspath(path.join(path.abspath(__file__), '..', 'images', '*'))):
